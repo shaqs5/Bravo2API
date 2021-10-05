@@ -33,9 +33,9 @@ tags:
     description: Find out more about our store
     url: http://swagger.io
 - name: avatar
-  description: Operations about superhero
+  description: Operations about avatar
   externalDocs:
-    description: Find out more about super hero
+    description: Find out more about avatar
     url: http://swagger.io
 paths:
 #  /performer/{performerId}/uploadImage:
@@ -606,7 +606,7 @@ paths:
         - avatar
       summary: Add avatar
       requestBody:
-        description: Post New superhero To Database
+        description: Post New avatar To Database
         required: true
         content:
           application/json:
@@ -700,13 +700,22 @@ paths:
         '200':
           description: OK
           schema:
-            "$ref": "#/components/schemas/SuperHeros"
+            "$ref": "#/components/schemas/Avatars"
         '404':
           description: NOT FOUND
           schema:
-            "$ref": "#/components/schemas/SuperHeros"
+            "$ref": "#/components/schemas/Avatars"
 components:
   schemas:
+    Avatars:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
     ApiResponse:
       type: object
       properties:
@@ -824,13 +833,6 @@ components:
           format: int32
       xml:
         name: User
-    SuperHeros:
-      type: object
-      properties:
-        name:
-          type: string
-        description:
-          type: string
   securitySchemes:
     api_key:
       type: apiKey
