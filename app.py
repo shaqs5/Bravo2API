@@ -5,7 +5,7 @@ from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from models import avatars
 # from flask_marshmallow import Marshmallow
-from schemas import avatars
+from schemas import avatarschema
 
 # from sqlalchemy import func
 # import psycopg2
@@ -51,8 +51,8 @@ app.register_blueprint(swaggerui_blueprint)
 
 # Schema AvatarSchema from schemas code file
 
-avatar_schema = avatars.AvatarSchema()
-avatars_schema = avatars.AvatarSchema(many=True)
+avatar_schema = avatarschema.AvatarSchema()
+avatars_schema = avatarschema.AvatarSchema(many=True)
 
 
 # Default Route to /api/docs
